@@ -1,4 +1,4 @@
-"""
+
 String Anagram
 
 An anagram of a string is another string with the same characters in the same frequency, in any order. For example 'abc', 'bca', 'acb', 'bac', 'cba', 'cab' are all anagrams of the string 'abc'.
@@ -23,12 +23,15 @@ Function Description
 Write a function stringAnagram in the editor below. stringAnagram has the following parameters:
 
 string dictionary[n]: an array of strings to search in
+
 string query[q]: an array of strings to search for
 
 Returns
+
 int[q]: an array of integers where the ith value is the answer to query[i]
 
 Constraints
+
 1 ≤ length(dictionary), length(query) ≤ 105 1 ≤ length(dictionary[i]) ≤ 15 1 ≤ length(query[i]) ≤ 15 Every string consists of lowercase English letters. Input Format For Custom Testing
 Sample Case 0
 Sample Input
@@ -49,9 +52,9 @@ query[1] = 'heater' has 2 anagrams in dictionary: 'heater' and 'reheat'.
 query[2] = 'abcd' has 0 anagrams in dictionary.
 
 The final answer is [3, 2, 0].
-
 Sample Case 1
 Sample Input
+
 dictionary = ['listen', 'tow', 'silent', 'lisent', 'two', 'abc', 'no', 'on']
 query = ['two', 'bca', 'no', 'listen']
 Sample Output
@@ -70,21 +73,5 @@ query[2] = 'no' has 2 anagrams in dictionary: 'no' and 'on'.
 
 query[3] = 'listen' has 3 anagrams in dictionary: 'listen', 'silent' and 'lisent'.
 
-The final answer is [2, 1, 2, 3]
-"""
-#%%
-def stringAnagram(query, dictionary):
-    queryCount = [0]*len(query)
-    for (queryIndex, queryWord) in enumerate(query):
-        for dictionaryWord in dictionary:
-            if len(queryWord) == len(dictionaryWord) and set(queryWord) - set(dictionaryWord) == set():
-                queryCount[queryIndex] +=1
-    return queryCount
-#%% Tests:
-dictionary = ['heater', 'cold', 'clod', 'reheat', 'docl']
-query = ['codl', 'heater', 'abcd']
-stringAnagram(query, dictionary) #prints [3, 2, 0] w^5
-#%%
-dictionary = ['listen', 'tow', 'silent', 'lisent', 'two', 'abc', 'no', 'on']
-query = ['two', 'bca', 'no', 'listen']
-stringAnagram(query, dictionary) #prints [2, 1, 2, 3] w^5
+The final answer is [2, 1, 2, 3].
+
